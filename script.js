@@ -2,17 +2,15 @@ let N1 = 400; // Major smoothness
 let N2 = 150; // Minor smoothness
 let R1 = 30; // Major radius
 let R2 = 10; // Minor radius
-const Kx = 800; // Screen width
-const Ky = 600; // Screen height
-const Kz = 400; // Screen distance or magnification
-const Kd = 70; // Donut distance
-const PLOTDOT = [5,5]; // Dimensions of plotted dots
+let Kx = 800; // Screen width
+let Ky = 600; // Screen height
+let Kz = 400; // Screen distance or magnification
+let Kd = 70; // Donut distance
+let PLOTDOT = [5,5]; // Dimensions of plotted dots
 let speed = [.3,.1,.1]; //Rotation speed
 let light = [0,0,-1]; //Light vector
 let color = [240,219,79] // RGB 0-255
 
-const halfKx = Kx / 2;
-const halfKy = Ky / 2;
 let canvas = document.createElement("canvas");
 document.body.appendChild(canvas);
 let ctx = canvas.getContext("2d");
@@ -73,6 +71,8 @@ function normalisedDot(a, b) {
 }
 
 let donut = createDonut(N1, N2);
+let halfKx = Kx / 2;
+let halfKy = Ky / 2;
 
 function animate() {
 	ctx.clearRect(0, 0, Kx, Ky);
