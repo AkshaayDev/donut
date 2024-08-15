@@ -6,7 +6,7 @@ let Kx = 800; // Screen width
 let Ky = 600; // Screen height
 let Kz = 400; // Screen distance or magnification
 let Kd = 70; // Donut distance
-let PLOTDOT = [5,5]; // Dimensions of plotted dots
+let dot = [5,5]; // Dimensions of plotted dots
 let speed = [.3,.1,.1]; //Rotation speed
 let light = [0,0,-1]; //Light vector
 let color = [240,219,79] // RGB 0-255
@@ -85,7 +85,7 @@ function animate() {
 		let px = (Kz * p[0]) / (p[2] + Kd);
 		let py = (Kz * p[1]) / (p[2] + Kd);
 		ctx.fillStyle = `rgb(${col[0]},${col[1]},${col[2]})`;
-		ctx.fillRect(px + halfKx, py + halfKy, PLOTDOT[0], PLOTDOT[1]);
+		ctx.fillRect(px + halfKx, py + halfKy, dot[0], dot[1]);
 	}
 	donut = donut.map((point) => {
 		let rotated = rotateX(point, speed[0]);
